@@ -1,4 +1,4 @@
-# Basics
+# Overview
 
 [Learn the basics](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
 
@@ -67,3 +67,37 @@ var Student = /** @class */ (function () {
     return Student;
 }());
 ```
+# Basics
+## Basic Types
+
+The `let` keyword is actually a newer JavaScript construct that TypeScript makes available, instead of using `var`.
+
+``` javascript
+// boolean
+let isDone: boolean = false;
+
+// number
+let decimal: number = 6;
+let hex: number = 0xf00d;
+let binary: number = 0b1010;
+let octal: number = 0o744;
+
+// string
+let color: string = "blue";
+
+// Array
+let list1: number[] = [1, 2, 3];
+let list2: Array<number> = [1, 2, 3];
+```
+
+### Template strings
+They can span multiple lines and have embedded expressions. These strings are surrounded by the backtick/backquote (\`) character, and embedded expressions are of the form ``${ expr }``.
+``` javascript
+let fullName: string = `Bob Bobbington`;
+let age: number = 37;
+let sentence: string = `Hello, my name is ${fullName}.
+                        I'll be ${ age + 1} years old next month.`;
+```
+
+### Tuple
+Tuple types allow you to express an array where the type of a fixed number of elements is known, but need not be the same.
