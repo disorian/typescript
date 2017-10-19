@@ -136,7 +136,15 @@ enum Color { Red = 1, Green, Blue }
 let c: Color = Color.Blue;
 let colorName: string = Color[2]; // Green
 ```
-
+Blow is the javascript compilation of the typescript:
+``` javascript
+var Color;
+(function (Color) {
+    Color[Color["Red"] = 1] = "Red";
+    Color[Color["Green"] = 2] = "Green";
+    Color[Color["Blue"] = 3] = "Blue";
+})(Color || (Color = {}));
+```
 ### Any
 We may need to describe the type of variables that we do not know when we are writing an application. These values may come from dynamic content, e.g. from the user or a 3rd party library. In these cases, we want to opt-out of type-checking and let the values pass through compile-time checks. To do so, we label these with the any type
 
